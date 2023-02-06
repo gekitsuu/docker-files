@@ -15,10 +15,5 @@
 # rm ./app
 
 
-if [[ ! -d ./images_workingdir ]]; then
-    mkdir -p ./images_workingdir
-fi
-
-
 echo Building Gato
-docker build --no-cache -t gekitsuu/gato:latest gato.Dockerfile
+docker buildx build --no-cache -t gekitsuu/gato:latest -f gato.Dockerfile .
